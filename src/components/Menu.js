@@ -1,6 +1,9 @@
 import React, {Component} from 'react';
 import {StyleSheet, Text, View} from 'react-native';
 import MenuCards from './MenuCards';
+import { Dimensions } from 'react-native';
+
+const windowWidth = Dimensions.get('window').width;
 
 export default class Menu extends Component {
   render() {
@@ -10,7 +13,7 @@ export default class Menu extends Component {
           <MenuCards></MenuCards>
           <MenuCards></MenuCards>
         </View>
-        <View style={styles.cardBox}>
+        <View style={[styles.cardBox, styles.bottomPadding]}>
           <MenuCards></MenuCards>
           <MenuCards></MenuCards>
         </View>
@@ -21,16 +24,16 @@ export default class Menu extends Component {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 2,
+    flex: 1,
     flexDirection: 'column',
-    justifyContent: 'space-around',
-    marginBottom: 150,
-    marginTop: 80,
   },
   cardBox: {
     flex: 1,
     flexDirection: 'row',
-    justifyContent: 'space-between',
-    paddingVertical: 10,
+    justifyContent: 'space-around',
+    paddingHorizontal: 130,
+  },
+  bottomPadding: {
+    paddingBottom: 80,
   },
 });

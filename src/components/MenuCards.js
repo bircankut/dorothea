@@ -1,18 +1,21 @@
 import React, {Component} from 'react';
-import {StyleSheet, Text, View} from 'react-native';
+import {StyleSheet, Text, View, TouchableOpacity} from 'react-native';
 
 export default class MenuCards extends Component {
   render() {
     return (
-      <View style={styles.card}></View>
+      <TouchableOpacity>
+        <View style={styles.card}></View>
+      </TouchableOpacity>
     );
   }
 }
 
 const styles = StyleSheet.create({
   card: {
-    width: 175,
-    backgroundColor: '#5555bb',
-    borderRadius: 15,
+    height: 180,
+    width: 170,
+    backgroundColor: '#FCF2F6',
+    borderRadius: 20,
   },
 });
