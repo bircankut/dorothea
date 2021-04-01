@@ -1,44 +1,29 @@
-import React, {Component} from 'react';
-import {
-  SafeAreaView,
-  StyleSheet,
-  Text,
-  View,
-  TouchableOpacity,
-} from 'react-native';
+import React from 'react';
+import {StyleSheet, View, Button} from 'react-native';
 import Menu from '../components/Menu';
-import MenuIcon from '../assets/menu-2-line.svg';
-import 'react-native-gesture-handler';
+import Navigation from '../components/navigation';
 
-
-
-export default class MainMenu extends Component {
-  render() {
-    return (
-      <View style={styles.container}>
-        <View style={styles.headerContainer}>
-          <TouchableOpacity>
-            <MenuIcon width="40" height="40" />
-          </TouchableOpacity>
-          <View>
-            <Text style={styles.header}>DOROTHEA</Text>
-          </View>
-          <View style={styles.box} />
-        </View>
-        <View style={styles.elipsContainer}>
-          <View style={styles.dailySubject}>
-            <View style={styles.dailyBox}>
-              <View style={styles.dailyHeader}>
-                <View style={styles.dailyHeaderBorder} />
-              </View>
+const Home = ({navigation}) => {
+  return (
+    <View style={styles.container}>
+      <Navigation navigation={navigation} title="Home" />
+      <View style={styles.elipsContainer}>
+        <View style={styles.dailySubject}>
+          <View style={styles.dailyBox}>
+            <View style={styles.dailyHeader}>
+              <View style={styles.dailyHeaderBorder} />
+              <Button
+                title="Go to Details"
+                onPress={() => navigation.navigate('Details')}
+              />
             </View>
           </View>
-          <Menu></Menu>
         </View>
+        <Menu />
       </View>
-    );
-  }
-}
+    </View>
+  );
+};
 
 const styles = StyleSheet.create({
   container: {
@@ -53,13 +38,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#C4C4C4',
     borderRadius: 350,
     left: -110,
-    top: 150,
-  },
-  headerContainer: {
-    flex: 1,
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    padding: 10,
+    top: 180,
   },
   dailySubject: {
     position: 'relative',
@@ -102,3 +81,5 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
 });
+
+export default Home;
