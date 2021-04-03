@@ -1,84 +1,54 @@
-import React from 'react';
-import {StyleSheet, View, Button} from 'react-native';
+import React, {useState, useEffect} from 'react';
+import {StyleSheet, View, Button, Text, ImageBackground} from 'react-native';
 import Menu from '../components/Menu';
 import Navigation from '../components/navigation';
+import DailySubject from '../components/dailySubject';
 
 const Home = ({navigation}) => {
   return (
     <View style={styles.container}>
-      <Navigation navigation={navigation} title="Home" />
-      <View style={styles.elipsContainer}>
-        <View style={styles.dailySubject}>
-          <View style={styles.dailyBox}>
-            <View style={styles.dailyHeader}>
-              <View style={styles.dailyHeaderBorder} />
-              <Button
-                title="Go to Details"
-                onPress={() => navigation.navigate('Details')}
-              />
-            </View>
+      <ImageBackground
+        source={require('../assets/backgroundImage.png')}
+        style={styles.image}>
+        <View style={styles.menuContainer}>
+          <Navigation navigation={navigation} title="DOROTHEA" />
+          <View style={styles.dailySubjectContainer}>
+            <DailySubject></DailySubject>
+          </View>
+          <View style={styles.contentContainer}>
+            <Menu></Menu>
           </View>
         </View>
-        <Menu />
-      </View>
+      </ImageBackground>
     </View>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
-    flex: 10,
-    flexDirection: 'column',
-    backgroundColor: '#FCF2F6',
-  },
-  elipsContainer: {
-    position: 'absolute',
-    height: 640,
-    width: 640,
-    backgroundColor: '#C4C4C4',
-    borderRadius: 350,
-    left: -110,
-    top: 180,
-  },
-  dailySubject: {
-    position: 'relative',
-    height: 160,
-    width: 320,
-    right: -156,
-    top: -45,
-    backgroundColor: '#FCF2F6',
-    borderRadius: 20,
-  },
-  header: {
-    padding: 10,
-    backgroundColor: '#C4C4C4',
-    borderRadius: 5,
-    color: '#330000',
-  },
-  box: {
-    height: 40,
-    width: 40,
-  },
-  dailyHeader: {
-    height: 55,
-    width: 250,
-    backgroundColor: '#FE6767',
-    borderRadius: 20,
-    top: -25,
-  },
-  dailyHeaderBorder: {
-    height: 55,
-    width: 250,
-    borderWidth: 1.2,
-    borderColor: '#330000',
-    borderRadius: 20,
-    top: -5,
-    left: -5,
-  },
-  dailyBox: {
     flex: 1,
-    flexDirection: 'row',
+  },
+  image: {
+    flex: 1,
+    resizeMode: 'cover',
     justifyContent: 'center',
+  },
+  menuContainer: {
+    flex: 7,
+    flexDirection: 'column',
+    paddingTop: 10,
+  },
+  dailySubjectContainer: {
+    flex: 2,
+    flexDirection: 'column',
+    justifyContent: 'center',
+    paddingHorizontal: 40,
+    marginTop: 10,
+  },
+  contentContainer: {
+    flex: 5,
+    flexDirection: 'column',
+    paddingVertical: 10,
   },
 });
 
