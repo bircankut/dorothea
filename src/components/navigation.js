@@ -1,10 +1,5 @@
 import React from 'react';
-import {
-  StyleSheet,
-  View,
-  TouchableOpacity,
-  Text,
-} from 'react-native';
+import {StyleSheet, View, TouchableOpacity, Text} from 'react-native';
 import MenuIcon from '../assets/menu-2-line.svg';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
 

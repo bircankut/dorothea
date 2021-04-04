@@ -1,46 +1,61 @@
 import React, {Component} from 'react';
 import {StyleSheet, Text, View, TouchableOpacity} from 'react-native';
 import Drawing from '../assets/drawing.svg';
-import Grid from '../assets/grid.svg';
+import GridIcon from '../assets/grid.svg';
 import Rulers from '../assets/rulers.svg';
 import Camera from '../assets/camera.svg';
 
-export default class Menu extends Component {
-  render() {
-    return (
-      <View style={styles.container}>
-        <View style={styles.cardBox}>
-          <TouchableOpacity style={styles.cards}>
-            <View style={styles.imageBox}>
-              <Drawing witdh="100%" height="100%" />
-            </View>
-            <Text style={styles.textBox}>Draw</Text>
-          </TouchableOpacity>
-          <TouchableOpacity style={styles.cards}>
-            <View style={styles.imageBox}>
-              <Grid witdh="100%" height="100%" />
-            </View>
-            <Text style={styles.textBox}>Grid</Text>
-          </TouchableOpacity>
-        </View>
-        <View style={styles.cardBox}>
-          <TouchableOpacity style={styles.cards}>
-            <View style={styles.imageBox}>
-              <Rulers witdh="100%" height="100%" />
-            </View>
-            <Text style={styles.textBox}>Ruler</Text>
-          </TouchableOpacity>
-          <TouchableOpacity style={styles.cards}>
-            <View style={styles.imageBox}>
-              <Camera witdh="100%" height="100%" />
-            </View>
-            <Text style={styles.textBox}>Camera</Text>
-          </TouchableOpacity>
-        </View>
+import Draw from '../screens/Draw';
+import Grid from '../screens/Grid';
+
+const Menu = ({navigation}) => {
+  return (
+    <View style={styles.container}>
+      <View style={styles.cardBox}>
+        <TouchableOpacity
+          style={styles.cards}
+          onPress={() => navigation.navigate('Home', {screen: 'Draw'})}>
+          <View style={styles.imageBox}>
+            <Drawing witdh="100%" height="100%" />
+          </View>
+          <Text style={styles.textBox}>Draw</Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+          style={styles.cards}
+          onPress={() =>
+            navigation.navigate('Home', {screen: 'Grid'})
+          }>
+          <View style={styles.imageBox}>
+            <GridIcon witdh="100%" height="100%" />
+          </View>
+          <Text style={styles.textBox}>Grid</Text>
+        </TouchableOpacity>
       </View>
-    );
-  }
-}
+      <View style={styles.cardBox}>
+        <TouchableOpacity
+          style={styles.cards}
+          onPress={() =>
+            navigation.navigate('Home', {screen: 'Ruler'})
+          }>
+          <View style={styles.imageBox}>
+            <Rulers witdh="100%" height="100%" />
+          </View>
+          <Text style={styles.textBox}>Ruler</Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+          style={styles.cards}
+          onPress={() =>
+            navigation.navigate('Home', {screen: 'Camera'})
+          }>
+          <View style={styles.imageBox}>
+            <Camera witdh="100%" height="100%" />
+          </View>
+          <Text style={styles.textBox}>Camera</Text>
+        </TouchableOpacity>
+      </View>
+    </View>
+  );
+};
 
 const styles = StyleSheet.create({
   container: {
@@ -68,3 +83,5 @@ const styles = StyleSheet.create({
     flex: 0.7,
   },
 });
+
+export default Menu;
