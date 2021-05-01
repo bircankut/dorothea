@@ -4,6 +4,15 @@ import Navigation from '../components/navigation';
 import {FlatGrid} from 'react-native-super-grid';
 import {TouchableOpacity} from 'react-native-gesture-handler';
 
+const REFERENCE_DRAWINGS = [
+  {
+    name: 'MIDNIGHT BLUE',
+    code: '#FED992',
+    animationUri: require('../svgFiles/data.json'),
+    steps: [0, 0.5, 1],
+  },
+];
+
 const Practises = ({navigation}) => {
   const [items, setItems] = React.useState([
     {name: 'TURQUOISE', code: '#FDA697'},
@@ -18,19 +27,26 @@ const Practises = ({navigation}) => {
     {name: 'MIDNIGHT BLUE', code: '#ADD8CE'},
     {name: 'WISTERIA', code: '#B2CEB2'},
     {name: 'MIDNIGHT BLUE', code: '#FED992'},
+    {name: 'WISTERIA', code: '#FDA697'},
+    {name: 'MIDNIGHT BLUE', code: '#ADD8CE'},
+    {name: 'WISTERIA', code: '#B2CEB2'},
+    {name: 'MIDNIGHT BLUE', code: '#FED992'},
   ]);
   return (
     <View style={styles.containers}>
       <Navigation navigation={navigation} title="Practises" />
       <FlatGrid
         itemDimension={120}
-        data={items}
+        data={REFERENCE_DRAWINGS}
         style={styles.gridView}
         spacing={30}
         renderItem={({item}) => (
           <TouchableOpacity
             onPress={() =>
-              navigation.navigate('Home', {screen: 'HorizontalLine'})
+              navigation.navigate('Home', {
+                screen: 'ReferenceDrawing',
+                params: {item},
+              })
             }>
             <View style={[styles.itemContainer, {backgroundColor: item.code}]}>
               <View style={styles.itemBorder}>

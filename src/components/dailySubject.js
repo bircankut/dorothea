@@ -2,6 +2,11 @@ import React, {Component} from 'react';
 import {StyleSheet, Text, View} from 'react-native';
 
 export default class DailySubject extends Component {
+  state = {
+    name: '',
+    image: '',
+  };
+
   render() {
     return (
       <View style={styles.container}>
@@ -21,7 +26,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 50,
     backgroundColor: '#FCF2F6',
     borderRadius: 20,
-    shadowColor: "#000",
+    shadowColor: '#000',
     shadowOffset: {
       width: 0,
       height: 5,

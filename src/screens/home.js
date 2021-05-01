@@ -9,7 +9,7 @@ import Draw from './Draw';
 import Grid from './Grid';
 import Ruler from './Ruler';
 import Camera from './Camera';
-import HorizontalLine from './HorizontalLine';
+import ReferenceDrawing from './ReferenceDrawing';
 
 const Stack = createStackNavigator();
 
@@ -75,7 +75,17 @@ const Home = () => {
       <Stack.Screen name="Grid" component={Grid} />
       <Stack.Screen name="Ruler" component={Ruler} />
       <Stack.Screen name="Camera" component={Camera} />
-      <Stack.Screen name="HorizontalLine" component={HorizontalLine} />
+      <Stack.Screen
+        options={{
+          headerStyle: {
+            backgroundColor: '#FCF2F6',
+            elevation: 0, // remove shadow on Android
+            shadowOpacity: 0, // remove shadow on iOS
+          },
+        }}
+        name="ReferenceDrawing"
+        component={ReferenceDrawing}
+      />
     </Stack.Navigator>
   );
 };

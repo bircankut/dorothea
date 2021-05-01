@@ -14,6 +14,8 @@
     "@react-navigation/drawer": "^5.12.4",
     "@react-navigation/native": "^5.9.3",
     "@react-navigation/stack": "^5.14.3",
+    "axios": "^0.21.1",
+    "lottie-react-native": "^4.0.2",
     "react": "17.0.1",
     "react-native": "0.64.0",
     "react-native-easy-grid": "^0.2.2",
@@ -22,7 +24,9 @@
     "react-native-safe-area-context": "^3.2.0",
     "react-native-screens": "^3.0.0",
     "react-native-super-grid": "^4.1.1",
-    "react-native-svg": "^12.1.0"
+    "react-native-svg": "^12.1.0",
+    "react-native-svg-animations": "^0.2.6",
+    "react-native-webview": "^11.4.3"
   },
   "devDependencies": {
     "@babel/core": "^7.12.9",
