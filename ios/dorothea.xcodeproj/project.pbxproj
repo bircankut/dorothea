@@ -14,6 +14,7 @@
 		4A78D83718E62F36110B1EE9 /* libPods-dorothea.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BF6EC7BDB2E99A0051B5E58 /* libPods-dorothea.a */; };
 		4C2B70C7F75262FF7081DC3B /* libPods-dorothea-dorotheaTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ED021F439E6537050A1C1286 /* libPods-dorothea-dorotheaTests.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
+		D21395F4263F2628003D6E4C /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = D21395F3263F2628003D6E4C /* File.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +43,8 @@
 		8BF6EC7BDB2E99A0051B5E58 /* libPods-dorothea.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-dorothea.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		90E763BA660E0B6C036D362A /* Pods-dorothea-dorotheaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-dorothea-dorotheaTests.debug.xcconfig"; path = "Target Support Files/Pods-dorothea-dorotheaTests/Pods-dorothea-dorotheaTests.debug.xcconfig"; sourceTree = "<group>"; };
 		AC085D7096A81C1F15A2FC60 /* Pods-dorothea.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-dorothea.release.xcconfig"; path = "Target Support Files/Pods-dorothea/Pods-dorothea.release.xcconfig"; sourceTree = "<group>"; };
+		D21395F2263F2628003D6E4C /* dorothea-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "dorothea-Bridging-Header.h"; sourceTree = "<group>"; };
+		D21395F3263F2628003D6E4C /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
 		ED021F439E6537050A1C1286 /* libPods-dorothea-dorotheaTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-dorothea-dorotheaTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
@@ -116,12 +119,14 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
+				D21395F3263F2628003D6E4C /* File.swift */,
 				13B07FAE1A68108700A75B9A /* dorothea */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
 				00E356EF1AD99517003FC87E /* dorotheaTests */,
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				BE36FCC0B6A1A17F7FD0B61B /* Pods */,
+				D21395F2263F2628003D6E4C /* dorothea-Bridging-Header.h */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -145,7 +150,6 @@
 				90E763BA660E0B6C036D362A /* Pods-dorothea-dorotheaTests.debug.xcconfig */,
 				761A03B6913E485E808044E7 /* Pods-dorothea-dorotheaTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -208,7 +212,7 @@
 						TestTargetID = 13B07F861A680F5B00A75B9A;
 					};
 					13B07F861A680F5B00A75B9A = {
-						LastSwiftMigration = 1120;
+						LastSwiftMigration = 1240;
 					};
 				};
 			};
@@ -412,6 +416,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */,
+				D21395F4263F2628003D6E4C /* File.swift in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -431,6 +436,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 90E763BA660E0B6C036D362A /* Pods-dorothea-dorotheaTests.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -458,6 +464,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 761A03B6913E485E808044E7 /* Pods-dorothea-dorotheaTests.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
 				INFOPLIST_FILE = dorotheaTests/Info.plist;
@@ -498,6 +505,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = dorothea;
+				SWIFT_OBJC_BRIDGING_HEADER = "dorothea-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -523,6 +531,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = dorothea;
+				SWIFT_OBJC_BRIDGING_HEADER = "dorothea-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
