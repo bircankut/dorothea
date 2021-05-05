@@ -1,17 +1,9 @@
 import React from 'react';
-import {Button, StyleSheet, Text, View} from 'react-native';
+import {StyleSheet, Text, View} from 'react-native';
 import Navigation from '../components/navigation';
 import {FlatGrid} from 'react-native-super-grid';
 import {TouchableOpacity} from 'react-native-gesture-handler';
-
-const REFERENCE_DRAWINGS = [
-  {
-    name: 'MIDNIGHT BLUE',
-    code: '#FED992',
-    animationUri: require('../svgFiles/data.json'),
-    steps: [0, 0.5, 1],
-  },
-];
+import {drawings} from '../animations/drawings';
 
 const Practises = ({navigation}) => {
   const [items, setItems] = React.useState([
@@ -37,7 +29,7 @@ const Practises = ({navigation}) => {
       <Navigation navigation={navigation} title="Practises" />
       <FlatGrid
         itemDimension={120}
-        data={REFERENCE_DRAWINGS}
+        data={Object.values(drawings)}
         style={styles.gridView}
         spacing={30}
         renderItem={({item}) => (
