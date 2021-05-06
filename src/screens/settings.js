@@ -18,12 +18,14 @@ const Settings = ({navigation}) => {
           <Button
             text={'Clear Drawings Data'}
             onPress={() => drawings.store.clear()}
+            style={{marginHorizontal: 30, marginVertical: 10}}
           />
           <Button
             text={'Fetch Drawings Store Data'}
             onPress={() => {
               fetchDrawingsStoreData(drawings);
             }}
+            style={{marginHorizontal: 30, marginVertical: 10}}
           />
           <View style={styles.textContainer}>
             <Text>{storeText}</Text>

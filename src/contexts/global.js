@@ -4,7 +4,7 @@ import {DrawingsManager} from '../managers/drawings-manager';
 export const defaultGlobal = {
   drawings: {
     store: new DrawingsManager(),
-    finished: [],
+    finished: {},
     isFinished: () => undefined,
     addFinished: () => undefined,
   },

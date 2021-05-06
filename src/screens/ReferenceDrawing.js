@@ -1,9 +1,9 @@
 import React, {Component} from 'react';
 import {Animated, Easing, StyleSheet, Text, View} from 'react-native';
-import {TouchableOpacity} from 'react-native-gesture-handler';
 import LottieView from 'lottie-react-native';
 import animations from '../animations';
 import {GlobalContext} from '../contexts/global';
+import Button from '../components/button';
 
 export default class ReferenceDrawing extends Component {
   static contextType = GlobalContext;
@@ -84,29 +84,17 @@ export default class ReferenceDrawing extends Component {
             </View>
             <View style={styles.buttonContainer}>
               <View style={styles.backgroundContainer}>
-                <TouchableOpacity
-                  style={styles.buttonBorder}
-                  onPress={this.previous}>
-                  <View style={styles.textBox}>
-                    <Text>Back</Text>
-                  </View>
-                </TouchableOpacity>
+                <Button
+                  text={'Back'}
+                  onPress={this.previous}
+                  variant={'secondary'}
+                />
               </View>
               <View style={styles.backgroundContainer2}>
                 {this.state.step === this.data.steps.length - 1 ? (
-                  <TouchableOpacity
-                    style={styles.button}
-                    onPress={this.onFinish}>
-                    <View style={styles.textBox2}>
-                      <Text style={styles.whiteText}>Finish</Text>
-                    </View>
-                  </TouchableOpacity>
+                  <Button text={'Finish'} onPress={this.onFinish} />
                 ) : (
-                  <TouchableOpacity style={styles.button} onPress={this.next}>
-                    <View style={styles.textBox2}>
-                      <Text style={styles.whiteText}>Continue</Text>
-                    </View>
-                  </TouchableOpacity>
+                  <Button text={'Continue'} onPress={this.next} />
                 )}
               </View>
             </View>
@@ -145,34 +133,6 @@ const styles = StyleSheet.create({
     flex: 1,
     paddingVertical: 20,
     paddingHorizontal: 15,
-  },
-  buttonBorder: {
-    height: 50,
-    borderWidth: 2,
-    borderColor: '#330000',
-    borderRadius: 20,
-  },
-  textBox: {
-    flex: 1,
-    flexDirection: 'column',
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  button: {
-    height: 50,
-    backgroundColor: '#FE6767',
-    borderRadius: 20,
-    borderWidth: 2,
-    borderColor: '#FE6767',
-  },
-  textBox2: {
-    flex: 1,
-    flexDirection: 'column',
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  whiteText: {
-    color: 'white',
   },
   info: {
     textAlign: 'center',
