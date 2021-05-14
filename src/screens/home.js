@@ -71,7 +71,11 @@ const Home = () => {
         name="Main"
         component={Main}
       />
-      <Stack.Screen name="Draw" component={Draw} />
+      <Stack.Screen
+        options={{headerShown: false}}
+        name="Draw"
+        component={Draw}
+      />
       <Stack.Screen name="Grid" component={Grid} />
       <Stack.Screen name="Ruler" component={Ruler} />
       <Stack.Screen name="Camera" component={Camera} />

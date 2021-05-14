@@ -15,6 +15,7 @@
     "@react-navigation/drawer": "^5.12.4",
     "@react-navigation/native": "^5.9.3",
     "@react-navigation/stack": "^5.14.3",
+    "@terrylinla/react-native-sketch-canvas": "^0.8.0",
     "axios": "^0.21.1",
     "lottie-ios": "3.1.8",
     "lottie-react-native": "^4.0.2",
