@@ -76,7 +76,17 @@ const Home = () => {
         name="Draw"
         component={Draw}
       />
-      <Stack.Screen name="Grid" component={Grid} />
+      <Stack.Screen
+        options={{
+          headerStyle: {
+            backgroundColor: '#FCF2F6',
+            elevation: 0, // remove shadow on Android
+            shadowOpacity: 0, // remove shadow on iOS
+          },
+        }}
+        name="Grid"
+        component={Grid}
+      />
       <Stack.Screen name="Ruler" component={Ruler} />
       <Stack.Screen
         options={{headerShown: false}}
