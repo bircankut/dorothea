@@ -2,16 +2,16 @@ import React, {Component} from 'react';
 import {StyleSheet, Text, View} from 'react-native';
 
 export default class DailySubject extends Component {
-  state = {
-    name: '',
-    image: '',
-  };
-
   render() {
+    var randomWords = require('random-words');
+
     return (
       <View style={styles.container}>
         <View style={styles.header}>
-          <View style={styles.headerBorder} />
+          <Text style={styles.headerStyle}>Today's Subject</Text>
+        </View>
+        <View>
+          <Text style={styles.subjectStyle}>{randomWords()}</Text>
         </View>
       </View>
     );
@@ -37,17 +37,23 @@ const styles = StyleSheet.create({
     elevation: 10,
   },
   header: {
-    flex: 0.35,
+    flex: 0.5,
+    justifyContent: 'center',
     backgroundColor: '#FE6767',
     borderRadius: 20,
     bottom: 20,
   },
-  headerBorder: {
-    bottom: 5,
-    left: -5,
-    flex: 1,
-    borderWidth: 2,
-    borderColor: '#330000',
-    borderRadius: 20,
+  headerStyle: {
+    padding: 5,
+    textAlign: 'center',
+    color: '#FCF2F6',
+    fontSize: 20,
+    fontWeight: 'bold',
+  },
+  subjectStyle: {
+    textAlign: 'center',
+    color: '#330000',
+    fontSize: 30,
+    fontWeight: 'bold',
   },
 });

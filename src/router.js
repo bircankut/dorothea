@@ -6,7 +6,8 @@ import {SafeAreaProvider} from 'react-native-safe-area-context';
 import {createDrawerNavigator} from '@react-navigation/drawer';
 import Practices from './screens/practices';
 import Settings from './screens/settings';
-import Progress from "./screens/Progress";
+import Progress from './screens/Progress';
+import HomeScreen from './screens/homeScreen';
 
 const Drawer = createDrawerNavigator();
 
@@ -28,6 +29,7 @@ export default class Router extends Component {
             <Drawer.Screen name="Practices" component={Practices} />
             <Drawer.Screen name="Progress" component={Progress} />
             <Drawer.Screen name="Settings" component={Settings} />
+            <Drawer.Screen name="HomeScreen" component={HomeScreen} />
           </Drawer.Navigator>
         </SafeAreaProvider>
       </NavigationContainer>
