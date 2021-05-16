@@ -8,6 +8,7 @@ import {
   View,
 } from 'react-native';
 
+import ImageZoom from 'react-native-image-pan-zoom';
 import * as ImagePicker from 'react-native-image-picker';
 import Button from '../components/button';
 
@@ -36,11 +37,18 @@ export default function Grid() {
       <View style={styles.container}>
         <View style={styles.imageContainer}>
           {response && (
-            <ImageBackground
-              style={[{width: 398, height: 398}, styles.image]}
-              source={{uri: response.uri}}>
-              {grids[gridIndex]}
-            </ImageBackground>
+            <ImageZoom
+              cropWidth={400}
+              cropHeight={400}
+              imageWidth={398}
+              imageHeight={398}>
+              <ImageBackground
+                resizeMode="contain"
+                style={styles.image}
+                source={{uri: response.uri}}>
+                {grids[gridIndex]}
+              </ImageBackground>
+            </ImageZoom>
           )}
         </View>
 
@@ -97,6 +105,7 @@ export default function Grid() {
               includeBase64: false,
               maxHeight: 400,
               maxWidth: 400,
+              quality: 1,
             },
             response => {
               setResponse(response);
