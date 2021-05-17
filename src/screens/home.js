@@ -10,7 +10,7 @@ import Grid from './Grid';
 import Ruler from './Ruler';
 import Camera from './Camera';
 import ReferenceDrawing from './ReferenceDrawing';
-import HomeScreen from './homeScreen';
+
 
 const Stack = createStackNavigator();
 

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {StyleSheet, Text, View} from 'react-native';
 import Navigation from '../components/navigation';
 import {FlatGrid} from 'react-native-super-grid';
@@ -24,6 +24,7 @@ const Practises = ({navigation}) => {
     {name: 'WISTERIA', code: '#B2CEB2'},
     {name: 'MIDNIGHT BLUE', code: '#FED992'},
   ]);
+
   return (
     <View style={styles.containers}>
       <Navigation navigation={navigation} title="Practises" />

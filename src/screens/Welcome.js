@@ -11,7 +11,7 @@ import Navigation from '../components/navigation';
 import Login from '../assets/login.svg';
 import Button from '../components/button';
 
-const HomeScreen = ({navigation}) => {
+const Welcome = ({navigation}) => {
   return (
     <View style={styles.containers}>
       <Navigation navigation={navigation} title="Welcome" />
@@ -92,4 +92,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default HomeScreen;
+export default Welcome;
