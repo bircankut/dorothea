@@ -11,7 +11,6 @@ import Ruler from './Ruler';
 import Camera from './Camera';
 import ReferenceDrawing from './ReferenceDrawing';
 
-
 const Stack = createStackNavigator();
 
 const Main = ({navigation}) => {
@@ -88,7 +87,17 @@ const Home = () => {
         name="Grid"
         component={Grid}
       />
-      <Stack.Screen name="Ruler" component={Ruler} />
+      <Stack.Screen
+        options={{
+          headerStyle: {
+            backgroundColor: '#FCF2F6',
+            elevation: 0, // remove shadow on Android
+            shadowOpacity: 0, // remove shadow on iOS
+          },
+        }}
+        name="Ruler"
+        component={Ruler}
+      />
       <Stack.Screen
         options={{headerShown: false}}
         name="Camera"

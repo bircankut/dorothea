@@ -94,7 +94,11 @@ export default class ReferenceDrawing extends Component {
                 </TouchableOpacity>
                 <TouchableOpacity
                   style={styles.greyButton}
-                  onPress={() => this.props.navigation.navigate('Home')}>
+                  onPress={() =>
+                    this.props.navigation.navigate('Home', {
+                      screen: 'Main',
+                    })
+                  }>
                   <Text style={styles.greyButtonText}>Go to Menu</Text>
                 </TouchableOpacity>
               </View>
