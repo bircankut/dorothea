@@ -1,3 +1,15 @@
 export default {
-  lines: require('../animations/lines.json'),
+  HorizontalLines: require('../animations/lines.json'),
+  prism: require('../animations/3drectangular.json'),
+  circles: require('../animations/circles.json'),
+  crossLines: require('../animations/cross-line.json'),
+  cube: require('../animations/cube.json'),
+  curv: require('../animations/curv.json'),
+  cylinder: require('../animations/cylinder.json'),
+  ellipsis: require('../animations/ellipsis.json'),
+  polygons: require('../animations/polygons.json'),
+  prisma: require('../animations/prisma.json'),
+  rectangle: require('../animations/rectangle.json'),
+  triangle: require('../animations/triangle.json'),
+  verticalLines: require('../animations/vertical-line.json'),
 };

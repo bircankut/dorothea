@@ -43,8 +43,8 @@ const Practises = ({navigation}) => {
             }>
             <View style={[styles.itemContainer, {backgroundColor: item.code}]}>
               <View style={styles.itemBorder}>
-                <Text style={styles.itemName} />
-                <Text style={styles.itemCode} />
+                <Text style={styles.itemName}>{item.name}</Text>
+                <Text style={styles.itemCode}/>
               </View>
             </View>
           </TouchableOpacity>
@@ -72,8 +72,10 @@ const styles = StyleSheet.create({
   },
   itemName: {
     fontSize: 16,
-    color: '#fff',
+    color: '#330000',
     fontWeight: '600',
+    textAlign: 'center',
+    marginTop: 20,
   },
   itemCode: {
     fontWeight: '600',
