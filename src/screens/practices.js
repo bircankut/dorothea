@@ -1,30 +1,11 @@
 import React, {useState} from 'react';
-import {StyleSheet, Text, View} from 'react-native';
+import {Image, StyleSheet, Text, View} from 'react-native';
 import Navigation from '../components/navigation';
 import {FlatGrid} from 'react-native-super-grid';
 import {TouchableOpacity} from 'react-native-gesture-handler';
 import {drawings} from '../animations/drawings';
 
 const Practises = ({navigation}) => {
-  const [items, setItems] = React.useState([
-    {name: 'TURQUOISE', code: '#FDA697'},
-    {name: 'EMERALD', code: '#ADD8CE'},
-    {name: 'PETER RIVER', code: '#B2CEB2'},
-    {name: 'AMETHYST', code: '#FED992'},
-    {name: 'WET ASPHALT', code: '#FDA697'},
-    {name: 'GREEN SEA', code: '#ADD8CE'},
-    {name: 'NEPHRITIS', code: '#B2CEB2'},
-    {name: 'BELIZE HOLE', code: '#FED992'},
-    {name: 'WISTERIA', code: '#FDA697'},
-    {name: 'MIDNIGHT BLUE', code: '#ADD8CE'},
-    {name: 'WISTERIA', code: '#B2CEB2'},
-    {name: 'MIDNIGHT BLUE', code: '#FED992'},
-    {name: 'WISTERIA', code: '#FDA697'},
-    {name: 'MIDNIGHT BLUE', code: '#ADD8CE'},
-    {name: 'WISTERIA', code: '#B2CEB2'},
-    {name: 'MIDNIGHT BLUE', code: '#FED992'},
-  ]);
-
   return (
     <View style={styles.containers}>
       <Navigation navigation={navigation} title="Practises" />
@@ -44,7 +25,7 @@ const Practises = ({navigation}) => {
             <View style={[styles.itemContainer, {backgroundColor: item.code}]}>
               <View style={styles.itemBorder}>
                 <Text style={styles.itemName}>{item.name}</Text>
-                <Text style={styles.itemCode}/>
+                <View style={styles.imageContainer}>{item.image}</View>
               </View>
             </View>
           </TouchableOpacity>
@@ -75,13 +56,9 @@ const styles = StyleSheet.create({
     color: '#330000',
     fontWeight: '600',
     textAlign: 'center',
-    marginTop: 20,
+    marginTop: 50,
   },
-  itemCode: {
-    fontWeight: '600',
-    fontSize: 12,
-    color: '#fff',
-  },
+
   itemBorder: {
     bottom: 8,
     left: -8,
@@ -89,6 +66,11 @@ const styles = StyleSheet.create({
     borderWidth: 2,
     borderColor: '#330000',
     borderRadius: 20,
+  },
+  imageContainer: {
+    flex: 1,
+    padding: 10,
+    marginTop: 10,
   },
 });
 

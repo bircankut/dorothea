@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import {DrawingsManager} from '../managers/drawings-manager';
+import {UserManager} from '../managers/user-manager';
 
 export const defaultGlobal = {
   drawings: {
@@ -7,6 +8,11 @@ export const defaultGlobal = {
     finished: {},
     isFinished: () => undefined,
     addFinished: () => undefined,
+  },
+  user: {
+    store: new UserManager(),
+    anyUser: () => undefined,
+    addUser: () => undefined,
   },
 };
 
@@ -28,6 +34,9 @@ export const GlobalContextProvider = ({children}) => {
   const isFinishedDrawing = key => {
     return finishedDrawings.hasOwnProperty(key);
   };
+
+
+
 
   return (
     <GlobalContext.Provider
