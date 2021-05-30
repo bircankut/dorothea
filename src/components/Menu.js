@@ -22,9 +22,7 @@ const Menu = ({navigation}) => {
         </TouchableOpacity>
         <TouchableOpacity
           style={styles.cards}
-          onPress={() =>
-            navigation.navigate('Home', {screen: 'Grid'})
-          }>
+          onPress={() => navigation.navigate('Home', {screen: 'Grid'})}>
           <View style={styles.imageBox}>
             <GridIcon witdh="100%" height="100%" />
           </View>
@@ -34,9 +32,7 @@ const Menu = ({navigation}) => {
       <View style={styles.cardBox}>
         <TouchableOpacity
           style={styles.cards}
-          onPress={() =>
-            navigation.navigate('Home', {screen: 'Ruler'})
-          }>
+          onPress={() => navigation.navigate('Home', {screen: 'Ruler'})}>
           <View style={styles.imageBox}>
             <Rulers witdh="100%" height="100%" />
           </View>
@@ -44,9 +40,7 @@ const Menu = ({navigation}) => {
         </TouchableOpacity>
         <TouchableOpacity
           style={styles.cards}
-          onPress={() =>
-            navigation.navigate('Home', {screen: 'Camera'})
-          }>
+          onPress={() => navigation.navigate('Home', {screen: 'Camera'})}>
           <View style={styles.imageBox}>
             <Camera witdh="100%" height="100%" />
           </View>
@@ -65,7 +59,7 @@ const styles = StyleSheet.create({
     flex: 1,
     flexDirection: 'row',
     justifyContent: 'space-evenly',
-    paddingVertical: 20,
+    paddingVertical: 10,
   },
   cards: {
     flex: 0.4,
@@ -77,10 +71,10 @@ const styles = StyleSheet.create({
   textBox: {
     flex: 0.3,
     color: '#330000',
-    fontSize: 25,
+    fontSize: 22,
   },
   imageBox: {
-    flex: 0.7,
+    flex: 0.9,
   },
 });
 

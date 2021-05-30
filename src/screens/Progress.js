@@ -7,7 +7,6 @@ import {GlobalContext} from '../contexts/global';
 import Button from '../components/button';
 import Vector from '../assets/Vector.svg';
 
-
 const Progress = ({navigation}) => {
   return (
     <GlobalContext.Consumer>

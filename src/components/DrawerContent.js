@@ -1,28 +1,36 @@
-import React, {Component} from 'react';
+import React, {Component, useContext} from 'react';
 import {Image, StyleSheet, Text, View} from 'react-native';
 import {DrawerContentScrollView, DrawerItem} from '@react-navigation/drawer';
 import Home from '../screens/home';
 import Practices from '../screens/practices';
 import Progress from '../screens/Progress';
 import Settings from '../screens/settings';
-import Welcome from '../screens/Welcome';
 import HomeIcon from '../assets/home-fill.svg';
 import PracticeIcon from '../assets/pencil-fill.svg';
 import ProgressIcon from '../assets/file-edit-fill.svg';
 import SettingIcon from '../assets/tools-fill.svg';
 import CloseIcon from '../assets/close-fill.svg';
 import {BackHandler} from 'react-native';
+import {GlobalContext} from '../contexts/global';
+import Vector from '../assets/Vector.svg';
 
-const DrawerContent = props => {
+const DrawerContent = ({props, navigation}) => {
+  const {user} = useContext(GlobalContext);
   return (
     <View style={{flex: 1}}>
       <DrawerContentScrollView {...props}>
+        <View style={styles.textContainerStyle}>
+          <Text style={styles.welcomeStyle}>Hello!</Text>
+          <Text style={[styles.userStyle, {paddingLeft: 10}]}>
+            {user.data.name}
+          </Text>
+        </View>
         <View style={styles.drawerSection}>
           <DrawerItem
             icon={() => <HomeIcon witdh="100%" height="100%" />}
             label="Home"
             onPress={() => {
-              props.navigation.navigate('Home');
+              navigation.navigate('Home');
             }}
           />
 
@@ -30,21 +38,21 @@ const DrawerContent = props => {
             icon={() => <PracticeIcon witdh="100%" height="100%" />}
             label="Practices"
             onPress={() => {
-              props.navigation.navigate('Practices');
+              navigation.navigate('Practices');
             }}
           />
           <DrawerItem
             icon={() => <ProgressIcon witdh="100%" height="100%" />}
             label="Progress"
             onPress={() => {
-              props.navigation.navigate('Progress');
+              navigation.navigate('Progress');
             }}
           />
           <DrawerItem
             icon={() => <SettingIcon witdh="100%" height="100%" />}
             label="Settings"
             onPress={() => {
-              props.navigation.navigate('Settings');
+              navigation.navigate('Settings');
             }}
           />
         </View>
@@ -87,7 +95,23 @@ const styles = StyleSheet.create({
     flex: 1,
     flexDirection: 'column',
     alignItems: 'center',
-    marginTop: 80,
+    marginTop: 50,
+  },
+  welcomeStyle: {
+    color: '#330000',
+    fontSize: 23,
+    fontWeight: 'bold',
+  },
+  userStyle: {
+    color: '#330000',
+    fontSize: 23,
+  },
+  textContainerStyle: {
+    flex: 1,
+    flexDirection: 'row',
+    alignItems: 'flex-end',
+    marginTop: 20,
+    paddingLeft: 22,
   },
 });
 
