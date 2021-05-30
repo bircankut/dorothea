@@ -73,6 +73,7 @@ export default class Draw extends Component {
               </View>
             }
             savePreference={() => {
+              console.log('savePreference');
               return {
                 folder: 'RNSketchCanvas',
                 filename: String(Math.ceil(Math.random() * 100000000)),

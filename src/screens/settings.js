@@ -6,8 +6,8 @@ import Button from '../components/button';
 
 const Settings = ({navigation}) => {
   const [storeText, setStoreText] = useState('');
-  const fetchDrawingsStoreData = drawings => {
-    setStoreText(JSON.stringify(drawings.store.getFinished() || {}));
+  const fetchDrawingsStoreData = async drawings => {
+    setStoreText(JSON.stringify((await drawings.store.getFinished()) || {}));
   };
 
   return (
@@ -15,20 +15,22 @@ const Settings = ({navigation}) => {
       {({drawings}) => (
         <View style={styles.root}>
           <Navigation navigation={navigation} title="Settings" />
-          <Button
-            text={'Clear Drawings Data'}
-            onPress={() => drawings.store.clear()}
-            style={{marginHorizontal: 30, marginVertical: 10}}
-          />
-          <Button
-            text={'Fetch Drawings Store Data'}
-            onPress={() => {
-              fetchDrawingsStoreData(drawings);
-            }}
-            style={{marginHorizontal: 30, marginVertical: 10}}
-          />
-          <View style={styles.textContainer}>
-            <Text>{storeText}</Text>
+          <View style={styles.contentContainer}>
+            <Button
+              text={'Clear Drawings Data'}
+              onPress={() => drawings.store.clear()}
+              style={{marginHorizontal: 30, marginVertical: 10}}
+            />
+            <Button
+              text={'Fetch Drawings Store Data'}
+              onPress={() => {
+                fetchDrawingsStoreData(drawings);
+              }}
+              style={{marginHorizontal: 30, marginVertical: 10}}
+            />
+            <View style={styles.textContainer}>
+              <Text>{storeText}</Text>
+            </View>
           </View>
         </View>
       )}
@@ -44,6 +46,10 @@ const styles = StyleSheet.create({
   },
   textContainer: {
     padding: 15,
+  },
+  contentContainer: {
+    flex: 1,
+    marginTop: 40,
   },
 });
 

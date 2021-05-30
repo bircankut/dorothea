@@ -1,41 +1,4 @@
 import React from 'react';
-import Line from '../assets/lines.svg';
-import VerticalLine from '../assets/VerticalLines.svg';
-import CrossLine from '../assets/CrossLines.svg';
-import Curv from '../assets/curv.svg';
-import Regtangle from '../assets/rectangle.svg';
-import Square from '../assets/square.svg';
-import Triangle from '../assets/triangle.svg';
-import Circle from '../assets/circle.svg';
-import Ellipsis from '../assets/ellipsis.svg';
-import Polygons from '../assets/polygons.svg';
-import Cube from '../assets/cube.svg';
-import Prism from '../assets/prism.svg';
-import Prisma from '../assets/prisma.svg';
-import Cylinder from '../assets/cylinder.svg';
-import Coffee from '../assets/coffee.svg';
-import Chemical from '../assets/chemical.svg';
-import Astronaut from '../assets/astronaut.svg';
-
-const images = [
-  <Line witdh="65%" height="65%" />,
-  <VerticalLine witdh="70%" height="70%" />,
-  <CrossLine witdh="65%" height="65%" />,
-  <Curv witdh="70%" height="70%" />,
-  <Regtangle witdh="70%" height="70%" />,
-  <Square witdh="70%" height="70%" />,
-  <Triangle witdh="70%" height="70%" />,
-  <Circle witdh="70%" height="70%" />,
-  <Ellipsis witdh="70%" height="70%" />,
-  <Polygons witdh="70%" height="70%" />,
-  <Cube witdh="70%" height="70%" />,
-  <Prism witdh="50%" height="50%" />,
-  <Prisma witdh="60%" height="60%" />,
-  <Cylinder witdh="80%" height="80%" />,
-  <Coffee witdh="80%" height="80%" />,
-  <Chemical witdh="80%" height="80%" />,
-  <Astronaut witdh="80%" height="80%" />,
-];
 
 export const drawings = {
   horizontalLines: {
@@ -50,7 +13,6 @@ export const drawings = {
       [0.87, 1],
       [1, 1],
     ],
-    image: images[0],
   },
 
   verticalLines: {
@@ -65,7 +27,6 @@ export const drawings = {
       [0.87, 7],
       [1, 5],
     ],
-    image: images[1],
   },
 
   crossLines: {
@@ -80,7 +41,6 @@ export const drawings = {
       [0.87, 1],
       [1, 1],
     ],
-    image: images[2],
   },
 
   curv: {
@@ -95,7 +55,6 @@ export const drawings = {
       [0.87, 1],
       [1, 1],
     ],
-    image: images[3],
   },
 
   rectangle: {
@@ -110,7 +69,6 @@ export const drawings = {
       [0.87, 3],
       [1, 1],
     ],
-    image: images[4],
   },
 
   square: {
@@ -125,7 +83,6 @@ export const drawings = {
       [0.87, 3],
       [1, 1],
     ],
-    image: images[5],
   },
 
   triangle: {
@@ -140,7 +97,6 @@ export const drawings = {
       [0.87, 5],
       [1, 1],
     ],
-    image: images[6],
   },
 
   circles: {
@@ -155,7 +111,6 @@ export const drawings = {
       [0.87, 1],
       [1, 1],
     ],
-    image: images[7],
   },
 
   ellipsis: {
@@ -170,7 +125,6 @@ export const drawings = {
       [0.87, 1],
       [1, 1],
     ],
-    image: images[8],
   },
 
   polygons: {
@@ -185,7 +139,6 @@ export const drawings = {
       [0.87, 1],
       [1, 1],
     ],
-    image: images[9],
   },
 
   cube: {
@@ -200,7 +153,6 @@ export const drawings = {
       [0.87, 1],
       [1, 1],
     ],
-    image: images[10],
   },
 
   prism: {
@@ -215,7 +167,6 @@ export const drawings = {
       [0.87, 1],
       [1, 1],
     ],
-    image: images[11],
   },
 
   prisma: {
@@ -230,7 +181,6 @@ export const drawings = {
       [0.87, 1],
       [1, 1],
     ],
-    image: images[12],
   },
 
   cylinder: {
@@ -245,7 +195,6 @@ export const drawings = {
       [0.87, 1],
       [1, 1],
     ],
-    image: images[13],
   },
 
   coffee: {
@@ -262,7 +211,6 @@ export const drawings = {
       [0.9, 5],
       [1, 5],
     ],
-    image: images[14],
   },
 
   chemicals: {
@@ -285,7 +233,6 @@ export const drawings = {
       [0.97, 1],
       [1, 1],
     ],
-    image: images[15],
   },
 
   astronaut: {
@@ -322,6 +269,5 @@ export const drawings = {
       [0.98, 1],
       [1, 1],
     ],
-    image: images[16],
   },
 };

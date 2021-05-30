@@ -1,24 +1,31 @@
-import MMKVStorage from 'react-native-mmkv-storage';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
-const DRAWINGS = 'drawings';
 const FINISHED_MAP = 'finished-map';
 
 export class DrawingsManager {
-  constructor() {
-    this.storage = new MMKVStorage.Loader()
-      .withInstanceID(DRAWINGS)
-      .initialize();
-  }
-
-  getFinished() {
-    return this.storage.getMap(FINISHED_MAP);
+  async getFinished() {
+    try {
+      const jsonValue = await AsyncStorage.getItem(FINISHED_MAP);
+      return jsonValue != null ? JSON.parse(jsonValue) : null;
+    } catch (e) {
+      // error reading value
+    }
   }
 
   async setFinished(drawings) {
-    return await this.storage.setMapAsync(FINISHED_MAP, drawings);
+    try {
+      const jsonValue = JSON.stringify(drawings);
+      await AsyncStorage.setItem(FINISHED_MAP, jsonValue);
+    } catch (e) {
+      // saving error
+    }
   }
 
-  clear() {
-    this.storage.removeItem(FINISHED_MAP);
+  async clear() {
+    try {
+      await AsyncStorage.removeItem(FINISHED_MAP);
+    } catch (e) {
+      // remove error
+    }
   }
 }

@@ -6,7 +6,7 @@ import ProgressImage from '../assets/progress.svg';
 import {GlobalContext} from '../contexts/global';
 import Button from '../components/button';
 import Vector from '../assets/Vector.svg';
-import Camera from '../assets/camera.svg';
+
 
 const Progress = ({navigation}) => {
   return (
@@ -27,7 +27,7 @@ const Progress = ({navigation}) => {
               )}
               {Object.keys(drawings.finished).map(key => {
                 return (
-                  <View style={styles.itemContainer}>
+                  <View key={key} style={styles.itemContainer}>
                     <Text style={styles.text}>
                       {' '}
                       {JSON.stringify(drawings.finished[key].name)} practice

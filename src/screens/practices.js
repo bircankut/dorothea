@@ -4,6 +4,7 @@ import Navigation from '../components/navigation';
 import {FlatGrid} from 'react-native-super-grid';
 import {TouchableOpacity} from 'react-native-gesture-handler';
 import {drawings} from '../animations/drawings';
+import DrawingPreviews from '../animations/previews';
 
 const Practises = ({navigation}) => {
   return (
@@ -16,16 +17,20 @@ const Practises = ({navigation}) => {
         spacing={30}
         renderItem={({item}) => (
           <TouchableOpacity
+            key={item.name}
             onPress={() =>
               navigation.navigate('Home', {
                 screen: 'ReferenceDrawing',
                 params: {item},
+                key: item.name,
               })
             }>
             <View style={[styles.itemContainer, {backgroundColor: item.code}]}>
               <View style={styles.itemBorder}>
                 <Text style={styles.itemName}>{item.name}</Text>
-                <View style={styles.imageContainer}>{item.image}</View>
+                <View style={styles.imageContainer}>
+                  {DrawingPreviews[item.name]}
+                </View>
               </View>
             </View>
           </TouchableOpacity>

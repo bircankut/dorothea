@@ -90,7 +90,7 @@ export default class ReferenceDrawing extends Component {
                 <TouchableOpacity
                   style={styles.pinkButton}
                   onPress={() => this.props.navigation.navigate('Practices')}>
-                  <Text style={styles.pinkButtonText}>Go to Pratices</Text>
+                  <Text style={styles.pinkButtonText}>Go to Practices</Text>
                 </TouchableOpacity>
                 <TouchableOpacity
                   style={styles.greyButton}

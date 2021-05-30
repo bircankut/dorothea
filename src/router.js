@@ -8,6 +8,7 @@ import Practices from './screens/practices';
 import Settings from './screens/settings';
 import Progress from './screens/Progress';
 import Welcome from './screens/Welcome';
+import DrawerContent from './components/DrawerContent';
 
 const Drawer = createDrawerNavigator();
 
@@ -17,14 +18,8 @@ export default class Router extends Component {
       <NavigationContainer>
         <SafeAreaProvider>
           <Drawer.Navigator
-            initialRouteName="Home"
-            drawerStyle={{
-              backgroundColor: '#FCF2F6',
-            }}
-            drawerContentOptions={{
-              activeTintColor: '#FCF2F6',
-              activeBackgroundColor: '#FE6767',
-            }}>
+            drawerContent={props => <DrawerContent {...props} />}
+            initialRouteName="Home">
             <Drawer.Screen name="Home" component={Home} />
             <Drawer.Screen name="Practices" component={Practices} />
             <Drawer.Screen name="Progress" component={Progress} />

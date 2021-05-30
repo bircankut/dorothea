@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect, useContext} from 'react';
 import {StyleSheet, View, Button, Text, ImageBackground} from 'react-native';
 import Menu from '../components/Menu';
 import Navigation from '../components/navigation';
@@ -10,10 +10,17 @@ import Grid from './Grid';
 import Ruler from './Ruler';
 import Camera from './Camera';
 import ReferenceDrawing from './ReferenceDrawing';
+import {GlobalContext} from '../contexts/global';
 
 const Stack = createStackNavigator();
 
 const Main = ({navigation}) => {
+  const {user} = useContext(GlobalContext);
+  useEffect(() => {
+    if (user.data === {}) {
+      console.log(user.data);
+    }
+  }, []);
   return (
     <View style={styles.container}>
       <ImageBackground
