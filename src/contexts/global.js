@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import {DrawingsManager} from '../managers/drawings-manager';
 import {UserManager} from '../managers/user-manager';
+import {SubjectManager} from '../managers/subject-manager';
 
 export const defaultGlobal = {
   drawings: {
@@ -14,6 +15,11 @@ export const defaultGlobal = {
     data: {},
     setUser: () => undefined,
   },
+  subject: {
+    store: new SubjectManager(),
+    data: {},
+    set: () => undefined,
+  },
 };
 
 export const GlobalContext = React.createContext(defaultGlobal);
@@ -21,6 +27,7 @@ export const GlobalContext = React.createContext(defaultGlobal);
 export const GlobalContextProvider = ({children}) => {
   const [finishedDrawings, setFinishedDrawings] = useState({});
   const [user, setUser] = useState({});
+  const [subject, setSubject] = useState({});
 
   useEffect(() => {
     const fetchFinishedDrawings = async () => {
@@ -34,6 +41,11 @@ export const GlobalContextProvider = ({children}) => {
       setUser((await defaultGlobal.user.store.getUser()) || {});
     };
     fetchUser();
+
+    const fetchSubject = async () => {
+      setSubject((await defaultGlobal.subject.store.getSubject()) || {});
+    };
+    fetchSubject();
   }, []);
 
   const addFinishedDrawing = async drawing => {
@@ -49,6 +61,12 @@ export const GlobalContextProvider = ({children}) => {
     user.updateTime = new Date().toString();
     setUser(user);
     await defaultGlobal.user.store.setUser(user);
+  };
+
+  const setSubjectData = async value => {
+    const data = {date: new Date().toString(), value};
+    setSubject(data);
+    await defaultGlobal.subject.store.setSubject(data);
   };
 
   const isFinishedDrawing = key => {
@@ -68,6 +86,11 @@ export const GlobalContextProvider = ({children}) => {
           store: defaultGlobal.user.store,
           setUser: setUserData,
           data: user,
+        },
+        subject: {
+          store: defaultGlobal.subject.store,
+          set: setSubjectData,
+          data: subject,
         },
       }}>
       {children}

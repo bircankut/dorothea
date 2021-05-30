@@ -11,14 +11,21 @@ import Ruler from './Ruler';
 import Camera from './Camera';
 import ReferenceDrawing from './ReferenceDrawing';
 import {GlobalContext} from '../contexts/global';
+import Welcome from './Welcome';
+import {useNavigation} from '@react-navigation/native';
 
 const Stack = createStackNavigator();
 
-const Main = ({navigation}) => {
+const Main = () => {
+  const navigation = useNavigation();
   const {user} = useContext(GlobalContext);
   useEffect(() => {
-    if (user.data === {}) {
-      console.log(user.data);
+    console.log(user.data);
+    if (Object.keys(user.data).length === 0) {
+      console.log(navigation);
+      navigation.navigate('Home', {
+        screen: 'Welcome',
+      });
     }
   }, []);
   return (
@@ -120,6 +127,11 @@ const Home = () => {
         }}
         name="ReferenceDrawing"
         component={ReferenceDrawing}
+      />
+      <Stack.Screen
+        options={{headerShown: false}}
+        name="Welcome"
+        component={Welcome}
       />
     </Stack.Navigator>
   );

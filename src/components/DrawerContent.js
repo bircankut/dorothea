@@ -47,13 +47,6 @@ const DrawerContent = props => {
               props.navigation.navigate('Settings');
             }}
           />
-          <DrawerItem
-            icon={() => <SettingIcon witdh="100%" height="100%" />}
-            label="Welcome"
-            onPress={() => {
-              props.navigation.navigate('Welcome');
-            }}
-          />
         </View>
 
         <View style={styles.imageContainer}>

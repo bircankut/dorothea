@@ -1,20 +1,16 @@
-import React, {Component} from 'react';
-import {
-  SafeAreaView,
-  ScrollView,
-  StyleSheet,
-  Text,
-  TextInput,
-  View,
-} from 'react-native';
-import Navigation from '../components/navigation';
+import React, {useContext, useState} from 'react';
+import {ScrollView, StyleSheet, Text, TextInput, View} from 'react-native';
+import {GlobalContext} from '../contexts/global';
+
 import Login from '../assets/login.svg';
 import Button from '../components/button';
 
 const Welcome = ({navigation}) => {
+  const {user} = useContext(GlobalContext);
+  const [input, setInput] = useState('');
   return (
     <View style={styles.containers}>
-      <Navigation navigation={navigation} title="Welcome" />
+      <Text style={styles.headerStyle}>Welcome!</Text>
       <View style={styles.imageBox}>
         <Login witdh="110%" height="110%" />
       </View>
@@ -32,16 +28,18 @@ const Welcome = ({navigation}) => {
               placeholder="user name"
               keyboardType="default"
               placeholderTextColor="#ddd"
+              onChangeText={setInput}
             />
           </View>
           <Button
             style={{borderRadius: 15}}
             text={'Lets Go'}
-            onPress={() =>
+            onPress={() => {
+              user.setUser({...user.data, name: input});
               navigation.navigate('Home', {
                 screen: 'Main',
-              })
-            }
+              });
+            }}
           />
         </View>
       </ScrollView>
@@ -74,7 +72,6 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     color: '#330000',
     fontSize: 25,
-    fontWeight: 'bold',
     paddingBottom: 5,
   },
   text2: {
@@ -89,6 +86,12 @@ const styles = StyleSheet.create({
     borderWidth: 2,
     borderRadius: 15,
     paddingLeft: 15,
+  },
+  headerStyle: {
+    textAlign: 'center',
+    color: '#330000',
+    fontSize: 35,
+    fontWeight: 'bold',
   },
 });
 

@@ -1,22 +1,37 @@
-import React, {Component} from 'react';
+import React, {useContext, useEffect} from 'react';
 import {StyleSheet, Text, View} from 'react-native';
+import {isSameDay} from 'date-fns';
+import {GlobalContext} from '../contexts/global';
 
-export default class DailySubject extends Component {
-  render() {
-    var randomWords = require('random-words');
+const randomWords = require('random-words');
 
-    return (
-      <View style={styles.container}>
-        <View style={styles.header}>
-          <Text style={styles.headerStyle}>Today's Subject</Text>
-        </View>
-        <View>
-          <Text style={styles.subjectStyle}>{randomWords()}</Text>
-        </View>
+const DailySubject = () => {
+  const {subject} = useContext(GlobalContext);
+  useEffect(() => {
+    const fetchSubject = async () => {
+      if (
+        !(
+          subject.data.value &&
+          subject.data.date &&
+          isSameDay(new Date(subject.data.date), new Date())
+        )
+      ) {
+        subject.set(randomWords());
+      }
+    };
+    fetchSubject();
+  }, []);
+  return (
+    <View style={styles.container}>
+      <View style={styles.header}>
+        <Text style={styles.headerStyle}>Today's Subject</Text>
       </View>
-    );
-  }
-}
+      <View>
+        <Text style={styles.subjectStyle}>{subject.data.value}</Text>
+      </View>
+    </View>
+  );
+};
 
 const styles = StyleSheet.create({
   container: {
@@ -57,3 +72,5 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
   },
 });
+
+export default DailySubject;
