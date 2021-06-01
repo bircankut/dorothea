@@ -60,6 +60,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-evenly',
     paddingVertical: 10,
+    paddingHorizontal: 7,
   },
   cards: {
     flex: 0.4,

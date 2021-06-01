@@ -9,7 +9,7 @@ import DrawingPreviews from '../animations/previews';
 const Practises = ({navigation}) => {
   return (
     <View style={styles.containers}>
-      <Navigation navigation={navigation} title="Practises" />
+      <Navigation navigation={navigation} title="Practices" />
       <FlatGrid
         itemDimension={120}
         data={Object.values(drawings)}
