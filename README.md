@@ -15,16 +15,16 @@ It provides daily drawing topics, structured practices, and additional tools to 
  ### Screenshots
 
 #### Landing Page
-![Home Screen](assets/Screenshot-landing-page.png)  
+![Home Screen](src/assets/Screenshot-landing-page.png)  
 
 #### Drawing Practice
-![Drawing Practice](assets/Screenshot-practice-page.png) 
+![Drawing Practice](src/assets/Screenshot-practice-page.png) 
 
 #### Canvas
-![Drawing Practice](assets/Screenshot-canvas.png)
+![Drawing Practice](src/assets/Screenshot-canvas.png)
 
 #### Grid
-![Drawing Practice](assets/Screenshot-grid.png) 
+![Drawing Practice](src/assets/Screenshot-grid.png) 
 
 
 ## Technologies Used
