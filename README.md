@@ -18,7 +18,7 @@ It provides daily drawing topics, structured practices, and additional tools to 
 ![Home Screen](src/assets/Screenshot-landing-page.png)  
 
 #### Drawing Practice
-![Drawing Practice](src/assets/Screenshot-practice-page.png) 
+![Drawing Practice](src/assets/Screenshot-practice.png) 
 
 #### Canvas
 ![Drawing Practice](src/assets/Screenshot-canvas.png)
